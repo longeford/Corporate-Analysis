@@ -12,3 +12,5 @@ kramdown:
 # GitHub Pages settings
 plugins:
   - jekyll-feed
+head:
+  - include: "/_includes/custom-head.html"
