@@ -1,0 +1,14 @@
+title: "My Blog"
+description: "A simple blog powered by Jekyll and GitHub Pages"
+theme: minima
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# GitHub Pages settings
+plugins:
+  - jekyll-feed
