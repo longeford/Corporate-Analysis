@@ -9,6 +9,4 @@ Inline math: $E=mc^2$.
 
 Block math:
 
-$$
-\int_a^b f(x) \, dx
-$$
+$$\int_a^b f(x) \, dx$$
