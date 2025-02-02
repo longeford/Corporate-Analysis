@@ -8,5 +8,10 @@ kramdown:
   input: GFM
   math_engine: mathjax
   syntax_highlighter: rouge
+# Adding categories
+collections:
+  categories:
+    output: true
+    permalink: /:collection/:categories:output_ext
 
 
