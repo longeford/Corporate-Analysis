@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Welcome to My Blog"
+category: category
 ---
 
 Hello, world! This is a test post.
