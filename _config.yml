@@ -10,7 +10,7 @@ kramdown:
   syntax_highlighter: rouge
 # Adding categories
 collections:
-  categories:
+  projects:
     output: true
     permalink: /:collection/:categories:output_ext
 
