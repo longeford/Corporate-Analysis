@@ -1,6 +1,36 @@
-title: "Corporate Analysis"
-description: "We are blogging on Corporate Finance Theory and Real Analysis"
+title: "Oscar Lange"
+description: "Academic website — research, teaching, and a blog on corporate finance theory and real analysis."
 theme: minima
+
+# Shown on the About page under the photo
+author:
+  name: "Oscar Lange"
+  affiliation: "Université Paris Dauphine – PSL"
+  # email: "you@example.com"   # uncomment to show in the footer
+
+# Profile photo (optional). Put the image in assets/img/ and uncomment.
+# Leave commented out to show no photo.
+# photo: /assets/img/profile.jpg
+
+# CV: the Dropbox *shared link to the PDF file* (Share -> Copy link).
+# Overwrite the file in Dropbox with the same name and the site updates automatically.
+cv_dropbox_url: ""
+
+# Social links in the footer (minima)
+github_username: longeford
+# linkedin_username:
+# twitter_username:
+
+# Order of the tabs in the top navigation
+header_pages:
+  - index.md
+  - cv.md
+  - research.md
+  - teaching.md
+  - blog.md
+
+# Blog posts live under /blog/
+permalink: /blog/:year/:month/:day/:title/
 
 # Markdown settings
 markdown: kramdown
@@ -8,6 +38,3 @@ kramdown:
   input: GFM
   math_engine: mathjax
   syntax_highlighter: rouge
-
-
-

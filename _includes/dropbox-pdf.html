@@ -1,0 +1,28 @@
+{%- comment -%}
+  Embeds a PDF from a Dropbox shared link.
+  Usage: {% include dropbox-pdf.html url=site.cv_dropbox_url title="CV" %}
+  "?dl=0" (preview page) is turned into "raw=1" (the file itself) for the viewer,
+  and into "dl=1" for the download link.
+{%- endcomment -%}
+{%- assign url = include.url | strip -%}
+{%- if url != "" -%}
+  {%- if url contains "dl=0" -%}
+    {%- assign raw = url | replace: "dl=0", "raw=1" -%}
+    {%- assign download = url | replace: "dl=0", "dl=1" -%}
+  {%- elsif url contains "?" -%}
+    {%- assign raw = url | append: "&raw=1" -%}
+    {%- assign download = url | append: "&dl=1" -%}
+  {%- else -%}
+    {%- assign raw = url | append: "?raw=1" -%}
+    {%- assign download = url | append: "?dl=1" -%}
+  {%- endif -%}
+  <p class="pdf-links">
+    <a href="{{ raw }}" target="_blank" rel="noopener">Open {{ include.title | default: "PDF" }} in a new tab</a>
+    · <a href="{{ download }}">Download</a>
+  </p>
+  <div class="pdf-embed">
+    <iframe src="{{ raw }}" title="{{ include.title | default: 'PDF' }}" loading="lazy"></iframe>
+  </div>
+{%- else -%}
+  <p><em>{{ include.title | default: "PDF" }} coming soon.</em></p>
+{%- endif -%}
