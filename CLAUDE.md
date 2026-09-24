@@ -19,14 +19,13 @@ Output goes to `_site/` (gitignored). Always build internal links/assets with `r
 
 ## Architecture
 
-- `_config.yml` holds all site-level settings the pages read from: `author.name`/`author.affiliation`, optional `photo` (About page shows it only if set), `cv_dropbox_url`, footer social usernames, `header_pages` (defines the nav tabs and their order), and the blog `permalink` (`/blog/...`).
-- Top-level pages: `index.md` (About, `layout: about`, served at `/`), `cv.md`, `research.md`, `teaching.md`, `blog.md` (`layout: home`, which lists `site.posts`).
-- `_layouts/` overrides minima's layouts of the same name; all layouts inherit from `base.html`. `about.html` is local-only. Theme includes not overridden locally (`head.html`, `header.html`, `footer.html`, …) come from the minima gem; the nav is minima's `header.html` driven by `header_pages`.
+- `_config.yml` holds all site-level settings the pages read from: `author.name`/`author.email`, contact links (`linkedin_username`, `scholar_url`, `institution_url`, `github_username`), `footer.address`/`footer.disclaimer`, optional `photo` and `banner` (About page shows them only if set), `cv_dropbox_url`, `header_pages` (defines the nav tabs and their order), and the blog `permalink` (`/blog/...`). Optional features are driven by whether a key is set, not by flags.
+- Top-level pages: `index.md` (About, `layout: about`, served at `/`), `cv.md`, `research.md`, `teaching.md`, `blog.md` (`layout: home`, which lists `site.posts`). The site title (the owner's name) is the only place the name appears; the About page deliberately has no name heading.
+- `_layouts/` overrides minima's layouts of the same name; all layouts inherit from `base.html`. `about.html` is local-only. Local `_includes/head.html` and `footer.html` replace minima's; `header.html` (the nav, driven by `header_pages`) still comes from the minima gem.
+- Local includes: `contact-icons.html` (inline-SVG icon row under the bio), `figure.html` (image with optional caption for use in page Markdown), `dropbox-pdf.html` (CV embed).
 - **CV embed**: `_includes/dropbox-pdf.html` takes a Dropbox shared file link, rewrites `dl=0` → `raw=1` for an `<iframe>` viewer and `dl=1` for a download link. Updating the CV means overwriting the same file in Dropbox — the shared link stays the same.
-- **Styles**: `assets/main.scss` imports `minima` and adds custom rules (profile photo, PDF iframe). It needs its empty front matter to be compiled.
-- **Math rendering** is split across two files and both are required:
-  - `_includes/custom-head.html` sets the `MathJax` config object (inline `$...$` / `\(...\)`, display `$$...$$` / `\[...\]`). It is included explicitly by `base.html` right after minima's `head.html`.
-  - `base.html` loads the MathJax v3 `tex-svg.js` script from jsDelivr at the end of the document. The config must be defined before this script runs.
+- **Styles**: `assets/main.scss` sets minima's Sass variables (font, colours, `$content-width`) *before* `@import "minima"`, then adds custom rules. It needs its empty front matter to be compiled.
+- **`_includes/custom-head.html`** (included inside `<head>` by the local `head.html`) loads the Lato Google Font and MathJax v3. The `MathJax` config object (inline `$...$` / `\(...\)`, display `$$...$$` / `\[...\]`) must stay before the `tex-svg.js` script tag.
 - `_posts/` — posts named `YYYY-MM-DD-slug.md` with front matter `layout: post`, `title`. LaTeX is written directly in Markdown using the delimiters above.
 
 ## Repo notes

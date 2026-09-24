@@ -1,0 +1,10 @@
+{%- comment -%}
+  Image within the text, with an optional caption.
+  Usage: {% include figure.html src="/assets/img/example.jpg" alt="Description" caption="Optional caption" %}
+{%- endcomment -%}
+<figure class="figure">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt | default: include.caption | escape }}" loading="lazy">
+  {%- if include.caption -%}
+    <figcaption>{{ include.caption }}</figcaption>
+  {%- endif -%}
+</figure>

@@ -2,28 +2,158 @@
 # Front matter required so Jekyll compiles this file; it overrides minima's stylesheet.
 ---
 
+// Minima variables (must be set before the import)
+$base-font-family: "Lato", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$base-font-size: 17px;
+$base-line-height: 1.65;
+$text-color: #222;
+$brand-color: #1f4e8c;   // accent colour for links
+$grey-color: #767676;
+$content-width: 900px;
+
 @import "minima";
 
-.about-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+// Header: thin line underneath instead of minima's dark top bar
+.site-header {
+  border-top: none;
+  border-bottom: 1px solid $grey-color-light;
+  min-height: 64px;
+}
+
+.site-title,
+.site-title:visited {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 64px;
+  color: $text-color;
+}
+
+.site-nav {
+  @media (min-width: $on-palm + 1px) {
+    line-height: 64px;
+  }
+
+  .page-link {
+    color: $grey-color-dark;
+
+    &:hover {
+      color: $brand-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.page-content {
+  padding: 48px 0;
+}
+
+.post-content {
+  h2 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+// About page
+.banner {
+  height: 220px;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
 }
 
 .profile-photo {
-  width: 160px;
-  height: 160px;
+  float: right;
+  width: 180px;
+  height: 180px;
+  margin: 0 0 1rem 1.5rem;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.affiliation {
-  margin: 0;
-  color: $grey-color;
+@media (max-width: 600px) {
+  .profile-photo {
+    float: none;
+    display: block;
+    margin: 0 auto 1.5rem;
+  }
 }
 
+.contact-icons {
+  clear: both;
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 2rem 0 0;
+
+  a {
+    color: $grey-color-dark;
+
+    &:hover {
+      color: $brand-color;
+    }
+  }
+
+  svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+// Images within the text
+.figure {
+  margin: 1.5rem 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+    border-radius: 4px;
+  }
+
+  figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: $grey-color;
+  }
+}
+
+// Footer
+.site-footer {
+  padding: 24px 0;
+  font-size: 0.85rem;
+  color: $grey-color;
+
+  p {
+    margin-bottom: 0.4rem;
+  }
+}
+
+.footer-cols {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-right {
+  text-align: right;
+
+  @media (max-width: 600px) {
+    text-align: left;
+  }
+}
+
+// CV
 .pdf-embed iframe {
   width: 100%;
   height: 85vh;

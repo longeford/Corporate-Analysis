@@ -1,25 +1,37 @@
 title: "Oscar Lange"
 description: "Academic website — research, teaching, and a blog on corporate finance theory and real analysis."
 theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
-# Shown on the About page under the photo
 author:
   name: "Oscar Lange"
-  affiliation: "Université Paris Dauphine – PSL"
-  # email: "you@example.com"   # uncomment to show in the footer
+  # email: "you@example.com"     # used for the mail icon and the "reach out" line
+
+# Contact icons under the bio (each one shows only if set)
+# linkedin_username: "your-linkedin-handle"
+# scholar_url: "https://scholar.google.com/citations?user=..."
+# institution_url: "https://dauphine.psl.eu/..."
+github_username: longeford
+
+# Footer
+footer:
+  address: |
+    Université Paris Dauphine – PSL
+    Place du Maréchal de Lattre de Tassigny
+    75016 Paris, France
+  disclaimer: "The views expressed on this website are my own."
 
 # Profile photo (optional). Put the image in assets/img/ and uncomment.
-# Leave commented out to show no photo.
 # photo: /assets/img/profile.jpg
+
+# Banner image across the top of the About page (optional).
+# banner: /assets/img/banner.jpg
 
 # CV: the Dropbox *shared link to the PDF file* (Share -> Copy link).
 # Overwrite the file in Dropbox with the same name and the site updates automatically.
 cv_dropbox_url: ""
-
-# Social links in the footer (minima)
-github_username: longeford
-# linkedin_username:
-# twitter_username:
 
 # Order of the tabs in the top navigation
 header_pages:

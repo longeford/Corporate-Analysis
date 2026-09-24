@@ -3,20 +3,18 @@ layout: base
 ---
 <article class="post about">
 
-  <div class="about-header">
-    {%- if site.photo -%}
-      <img class="profile-photo" src="{{ site.photo | relative_url }}" alt="Photo of {{ site.author.name | escape }}">
-    {%- endif -%}
-    <div>
-      <h1 class="post-title">{{ site.author.name | default: site.title | escape }}</h1>
-      {%- if site.author.affiliation -%}
-        <p class="affiliation">{{ site.author.affiliation | escape }}</p>
-      {%- endif -%}
-    </div>
-  </div>
+  {%- if site.banner -%}
+    <div class="banner" style="background-image: url('{{ site.banner | relative_url }}');"></div>
+  {%- endif -%}
+
+  {%- if site.photo -%}
+    <img class="profile-photo" src="{{ site.photo | relative_url }}" alt="Photo of {{ site.author.name | escape }}">
+  {%- endif -%}
 
   <div class="post-content">
     {{ content }}
   </div>
+
+  {%- include contact-icons.html -%}
 
 </article>

@@ -1,0 +1,32 @@
+{%- comment -%}
+  Row of contact icons. Each icon appears only if its setting in _config.yml is filled in.
+{%- endcomment -%}
+{%- if site.author.email or site.linkedin_username or site.scholar_url or site.institution_url or site.github_username -%}
+<ul class="contact-icons">
+  {%- if site.author.email -%}
+  <li><a href="mailto:{{ site.author.email }}" title="Email" aria-label="Email">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </a></li>
+  {%- endif -%}
+  {%- if site.linkedin_username -%}
+  <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+  </a></li>
+  {%- endif -%}
+  {%- if site.scholar_url -%}
+  <li><a href="{{ site.scholar_url }}" title="Google Scholar" aria-label="Google Scholar">
+    <svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+  </a></li>
+  {%- endif -%}
+  {%- if site.institution_url -%}
+  <li><a href="{{ site.institution_url }}" title="Institutional page" aria-label="Institutional page">
+    <svg viewBox="0 0 24 24"><path d="M3 10 12 4l9 6z"/><path d="M5 10v9M9.5 10v9M14.5 10v9M19 10v9M3 21h18"/></svg>
+  </a></li>
+  {%- endif -%}
+  {%- if site.github_username -%}
+  <li><a href="https://github.com/{{ site.github_username }}" title="GitHub" aria-label="GitHub">
+    <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+  </a></li>
+  {%- endif -%}
+</ul>
+{%- endif -%}

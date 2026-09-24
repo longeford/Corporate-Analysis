@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-cols">
+      <div>
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title | escape }}</p>
+        {%- if site.footer.address -%}
+          <p class="footer-address">{{ site.footer.address | strip | escape | newline_to_br }}</p>
+        {%- endif -%}
+      </div>
+      <div class="footer-right">
+        {%- if site.footer.disclaimer -%}
+          <p>{{ site.footer.disclaimer | escape }}</p>
+        {%- endif -%}
+        <p>Last updated: {{ site.time | date: "%B %Y" }}</p>
+      </div>
+    </div>
+  </div>
+</footer>
