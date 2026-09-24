@@ -31,5 +31,5 @@ Output goes to `_site/` (gitignored). Always build internal links/assets with `r
 
 ## Repo notes
 
-- The working branch is `master`; `main` is the default branch on GitHub.
+- `main` is the default branch on GitHub; push changes there.
 - A previous `_projects` collection and `project` layout were deleted; don't reintroduce references to them.
