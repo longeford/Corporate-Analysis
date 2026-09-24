@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Blog
+title: Corporate Analysis
 permalink: /blog/
 ---
 
-Notes on corporate finance theory and real analysis.
+Everything that interests me between Real Analysis and Economic Theory
