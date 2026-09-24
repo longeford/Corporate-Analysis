@@ -7,7 +7,7 @@ plugins:
 
 author:
   name: "Oscar Lange"
-  # email: "you@example.com"     # used for the mail icon and the "reach out" line
+  email: "oscar.lange@dauphine.psl.eu"     # used for the mail icon and the "reach out" line
 
 # Contact icons under the bio (each one shows only if set)
 # linkedin_username: "your-linkedin-handle"
